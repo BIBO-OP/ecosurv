@@ -1,0 +1,155 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards; /* Animasi Fade In */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+header {
+    background-color: #003a79;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards 0.5s; /* Fade In with delay */
+}
+
+.contact-section {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin: 2rem;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+    opacity: 0;
+    animation: fadeIn 2s forwards 0.75s; /* Fade In with delay */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    animation: fadeIn 2s forwards 1s; /* Fade In with delay */
+}
+
+label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+input, textarea {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+button {
+    padding: 0.75rem;
+    background-color: #003a79;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeIn 2s forwards 1.25s; /* Fade In with delay */
+}
+
+button:hover {
+    background-color: #007bff;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #007bff;
+    text-decoration: none;
+    opacity: 0;
+    animation: fadeIn 2s forwards 1.5s; /* Fade In with delay */
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    color: #666;
+    opacity: 0;
+    animation: fadeIn 2s forwards 1.75s; /* Fade In with delay */
+}
+.back-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3A506B; /* Warna dasar tombol */
+    color: white;
+    text-decoration: none;
+    border-radius: 50px; /* Membuat ujung tombol membulat */
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px; /* Memberikan sedikit spasi pada huruf */
+    text-transform: uppercase; /* Mengubah teks menjadi huruf besar */
+    transition: all 0.3s ease; /* Menambahkan efek transisi */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan tombol */
+    position: relative;
+    overflow: hidden;
+}
+
+.back-btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.1); /* Warna efek hover */
+    transition: all 0.75s ease;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.back-btn:hover::before {
+    transform: translate(-50%, -50%) scale(1); /* Efek lingkaran saat hover */
+}
+
+.back-btn:hover {
+    background-color: #5C728B; /* Warna saat di-hover */
+    color: #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Mengubah bayangan saat di-hover */
+}
+
+.back-btn:active {
+    transform: scale(0.98); /* Efek klik */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Bayangan saat tombol ditekan */
+}

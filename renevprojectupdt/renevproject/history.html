@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout History</title>
+    <link rel="stylesheet" href="hystory.css">
+</head>
+<body>
+    <header>
+        <h1>Checkout History</h1>
+        
+            
+        
+    </header>
+    <center>
+    <main id="history-items">
+        <!-- History items will be displayed here dynamically -->
+    </main></center>
+    <footer>
+        <a href="index.html">Back to Products</a><br>
+        <p>or</p>
+            <a href="cart.html">View Cart</a>
+        
+    </footer>
+    <script>
+        // Load and display checkout history from localStorage
+        window.addEventListener('DOMContentLoaded', function() {
+            const historyContainer = document.getElementById('history-items');
+            const historyData = JSON.parse(localStorage.getItem('checkoutHistory')) || [];
+
+            if (historyData.length === 0) {
+                historyContainer.innerHTML = '<p>No checkout history found.</p>';
+            } else {
+                historyData.forEach(order => {
+                    const orderDiv = document.createElement('div');
+                    orderDiv.classList.add('order-history-item');
+                    
+                    const dateElement = document.createElement('p');
+                    dateElement.textContent = `Order Date: ${order.date}`;
+                    
+                    const itemsElement = document.createElement('ul');
+                    order.items.forEach(item => {
+                        const itemLi = document.createElement('li');
+                        itemLi.textContent = `${item.description} - $${item.price}`;
+                        itemsElement.appendChild(itemLi);
+                    });
+
+                    orderDiv.appendChild(dateElement);
+                    orderDiv.appendChild(itemsElement);
+                    historyContainer.appendChild(orderDiv);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

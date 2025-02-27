@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic styling for header and dropdown */
+        .hamburger-menu {
+            cursor: pointer;
+            width: 30px;
+            height: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .hamburger-menu .line {
+            width: 30px;
+            height: 4px;
+            background-color: #333;
+            border-radius: 4px;
+        }
+
+        #dropdown {
+            display: none;
+            background-color: #333;
+            position: absolute;
+            top: 60px;
+            right: 10px;
+            width: 200px;
+            border-radius: 8px;
+        }
+
+        #dropdown a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+
+        #dropdown a:hover {
+            background-color: #444;
+        }
+
+        #dropdown.active {
+            display: block;
+        }
+
+        .category-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3A506B;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            margin: 40px;
+        }
+
+        .category-button::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: all 0.75s ease;
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+        }
+
+        .category-button:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .category-button:hover {
+            background-color: #5C728B;
+            color: #fff;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .category-button:active {
+            transform: scale(0.98);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="hamburger-menu" id="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="search-container">
+            <input type="text" placeholder="Search...">
+        </div>
+        <div class="user-icon">
+            <a href="profile.html">
+                <img src="user.jpg" alt="User">
+            </a>
+        </div>
+    </header>
+
+    <nav class="dropdown" id="dropdown">
+        <a href="index.html">Home</a>
+        <a href="index.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Log Out</a>
+    </nav>
+
+    <div class="category-buttons">
+        <a href="electronic.html">
+            <div class="category-button">Electronic</div>
+        </a>
+        <a href="clothes.html">
+            <div class="category-button">Clothes</div>
+        </a>
+        <a href="home.html">
+            <div class="category-button">Home Appliance</div>
+        </a>
+        <a href="vehicles.html">
+            <div class="category-button">Vehicle</div>
+        </a>
+    </div>
+
+    <main>
+        <div class="grid" id="product-grid">
+            <!-- Dynamic product items will be displayed here -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="icons">
+            <a href="cart.html">
+                <img src="grocery-store.png" alt="Cart">
+            </a>
+            <a href="add.html">
+                <img src="plus.png" alt="Add New Product">
+            </a>
+            <a href="history.html">
+                <img src="history.jpg.jpeg" alt="Report">
+            </a>
+        </div>
+    </footer>
+
+    <script src="hamburger.js"></script>
+    <script src="clothes.js"></script>
+</body>
+
+</html>

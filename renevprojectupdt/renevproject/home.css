@@ -1,0 +1,188 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures footer stays at the bottom of the page */
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #f8f8f8;
+    animation: slideDown 1s ease-in-out forwards; /* Menambahkan animasi slideDown */
+}
+
+.hamburger-menu {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.line {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px 0;
+}
+
+.search-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px; /* Jarak antara search dan kategori */
+}
+
+.category-button {
+    border: 1px solid #000; /* Warna border */
+    padding: 10px 20px; /* Jarak dalam border */
+    margin: 0 5px; /* Jarak antar tombol */
+    cursor: pointer; /* Menunjukkan bahwa ini adalah tombol */
+    transition: background-color 0.3s; /* Efek transisi */
+}
+
+.category-button:hover {
+    background-color: #f0f0f0; /* Warna latar belakang saat hover */
+}
+
+.dropdown {
+    display: none;
+    flex-direction: column;
+    background-color: #f8f8f8;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: #eaeaea;
+}
+
+.user-icon img {
+    width: 30px;
+    height: auto;
+    
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    padding: 35px;
+    flex-grow: 1; /* Ensures the grid takes up available space */
+}
+
+.grid-item {
+    background-color: #eaeaea;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.grid-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.add-to-cart-btn {
+    margin-top: 10px;
+    background-color: #4a50ee;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.add-to-cart-btn a {
+    color: white;
+    text-decoration: none;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #302de9;
+}
+
+/* Footer styles */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #f8f8f8;
+    margin-top: auto; /* Ensures footer stays at the bottom */
+    width: 100%;
+    animation: slideUp 1s ease-in-out forwards; /* Menambahkan animasi slideUp */
+}
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+    width: 50%; /* Adjust width as needed */
+}
+
+.icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.icons img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Animasi datang dari atas */
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Animasi datang dari bawah */
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+        opacity : 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Animasi untuk grid-item */
+/* Animasi untuk grid-item */

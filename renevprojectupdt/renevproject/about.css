@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #3A506B;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+/* Terapkan animasi pada h1 (datang dari kiri) */
+h1 {
+    font-size: 2.5rem;
+    animation: slideInFromLeft 1s ease-in-out forwards;
+}
+
+
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: white;
+    margin: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+}
+
+.about-image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 2rem;
+    transition: transform 0.3s ease;
+}
+
+
+.about-image:hover {
+    transform: rotate(15deg) scale(1.1);
+}
+
+.about-content {
+    max-width: 600px;
+}
+
+.about-content h2 {
+    font-size: 2rem;
+    color: #3A506B;
+    margin-bottom: 1rem;
+}
+
+.about-content p {
+    margin-bottom: 1rem;
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    background-color: #3A506B;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #5C728B;
+    transition: background-color 0.3s ease;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #3A506B;
+    color: white;
+    margin-top: 2rem;
+    border-top: 1px solid #ddd;
+}
+/* Animasi datang dari kiri */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animasi datang dari kanan */
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Terapkan animasi pada about-image (datang dari kiri) */
+.about-image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 2rem;
+    animation: slideInFromLeft 1s ease-in-out forwards;
+    transition: transform 0.3s ease; /* Menambahkan animasi slideInFromLeft */
+}
+
+/* Terapkan animasi pada about-content (datang dari kanan) */
+.about-content {
+    max-width: 600px;
+    animation: slideInFromRight 1s ease-in-out forwards; /* Menambahkan animasi slideInFromRight */
+}
+.back-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3A506B; /* Warna dasar tombol */
+    color: white;
+    text-decoration: none;
+    border-radius: 50px; /* Membuat ujung tombol membulat */
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px; /* Memberikan sedikit spasi pada huruf */
+    text-transform: uppercase; /* Mengubah teks menjadi huruf besar */
+    transition: all 0.3s ease; /* Menambahkan efek transisi */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan tombol */
+    position: relative;
+    overflow: hidden;
+}
+
+.back-btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.1); /* Warna efek hover */
+    transition: all 0.75s ease;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.back-btn:hover::before {
+    transform: translate(-50%, -50%) scale(1); /* Efek lingkaran saat hover */
+}
+
+.back-btn:hover {
+    background-color: #5C728B; /* Warna saat di-hover */
+    color: #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Mengubah bayangan saat di-hover */
+}
+
+.back-btn:active {
+    transform: scale(0.98); /* Efek klik */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Bayangan saat tombol ditekan */
+}
+
